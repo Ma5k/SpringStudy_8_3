@@ -7,20 +7,20 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.wisely.ch8_3.domain.Person;
 /**
- * ÔÚpostmanÖĞÊ¹ÓÃget·½Ê½·ÃÎÊ		localhost:8080/people	»ñÈ¡ËùÓĞperson
- * ÔÚpostmanÖĞÊ¹ÓÃget·½Ê½·ÃÎÊ		localhost:8080/people/1	»ñÈ¡idÎª1µÄperson
- * ÔÚpostmanÖĞÊ¹ÓÃget·½Ê½·ÃÎÊ		localhost:8080/people/?page=0&size=2	·ÖÒ³²éÑ¯»ñÈ¡personµÚ1Ò³Ã¿Ò³ÊıÁ¿Îª2
- * ÔÚpostmanÖĞÊ¹ÓÃget·½Ê½·ÃÎÊ		localhost:8080/people/search/nameStartsWith?name=Íõ	²éÑ¯name´òÍ·Îª¡°Íõ¡±µÄperson
- * ÔÚpostmanÖĞÊ¹ÓÃget·½Ê½·ÃÎÊ		localhost:8080/people/?sort=age,desc	°´ÕÕageÊôĞÔµ¹Ğò²éÑ¯ËùÓĞperson
- * ÔÚpostmanÖĞÊ¹ÓÃpost·½Ê½·ÃÎÊ	localhost:8080/people	ÉèÖÃbody->raw->json->Ğ´ÈëÊı¾İÎª{"name":"haha","address":"º¼Öİ","age":"18"}	
- * 													±£´æĞÂµÄpersonµ½Êı¾İ¿â
- * ÔÚpostmanÖĞÊ¹ÓÃput·½Ê½·ÃÎÊ		localhost:8080/people/1	{"name":"haha","address":"º¼Öİ","age":"18"}	¸üĞÂidÎª1µÄperson
- * ÔÚpostmanÖĞÊ¹ÓÃdelete·½Ê½·ÃÎÊ	localhost:8080/people/1	É¾³ıidÎª1µÄperson
+ * åœ¨postmanä¸­ä½¿ç”¨getæ–¹å¼è®¿é—®		localhost:8080/people	è·å–æ‰€æœ‰person
+ * åœ¨postmanä¸­ä½¿ç”¨getæ–¹å¼è®¿é—®		localhost:8080/people/1	è·å–idä¸º1çš„person
+ * åœ¨postmanä¸­ä½¿ç”¨getæ–¹å¼è®¿é—®		localhost:8080/people/?page=0&size=2	åˆ†é¡µæŸ¥è¯¢è·å–personç¬¬1é¡µæ¯é¡µæ•°é‡ä¸º2
+ * åœ¨postmanä¸­ä½¿ç”¨getæ–¹å¼è®¿é—®		localhost:8080/people/search/nameStartsWith?name=ç‹	æŸ¥è¯¢nameæ‰“å¤´ä¸ºâ€œç‹â€çš„person
+ * åœ¨postmanä¸­ä½¿ç”¨getæ–¹å¼è®¿é—®		localhost:8080/people/?sort=age,desc	æŒ‰ç…§ageå±æ€§å€’åºæŸ¥è¯¢æ‰€æœ‰person
+ * åœ¨postmanä¸­ä½¿ç”¨postæ–¹å¼è®¿é—®	localhost:8080/people	è®¾ç½®body->raw->json->å†™å…¥æ•°æ®ä¸º{"name":"haha","address":"æ­å·","age":"18"}	
+ * 													ä¿å­˜æ–°çš„personåˆ°æ•°æ®åº“
+ * åœ¨postmanä¸­ä½¿ç”¨putæ–¹å¼è®¿é—®		localhost:8080/people/1	{"name":"haha","address":"æ­å·","age":"18"}	æ›´æ–°idä¸º1çš„person
+ * åœ¨postmanä¸­ä½¿ç”¨deleteæ–¹å¼è®¿é—®	localhost:8080/people/1	åˆ é™¤idä¸º1çš„person
  * @author Mask
- *	Êµ¼ÊÏîÄ¿ÖĞÊ¹ÓÃjQuery:$.ajaxµÄ·½Ê½À´Ê¹ÓÃ
- *	»òAngularJS:$httpÀ´Ê¹ÓÃ
+ *	å®é™…é¡¹ç›®ä¸­ä½¿ç”¨jQuery:$.ajaxçš„æ–¹å¼æ¥ä½¿ç”¨
+ *	æˆ–AngularJS:$httpæ¥ä½¿ç”¨
  */
-@RepositoryRestResource(path = "people")	//¶¨ÖÆ½ÚµãÂ·¾¶
+@RepositoryRestResource(path = "people")	//å®šåˆ¶èŠ‚ç‚¹è·¯å¾„
 public interface PersonRepository extends JpaRepository<Person, Long>{
 	@RestResource(path = "nameStartsWith", rel = "nameStartsWith")
 	Person findByNameStartsWith(@Param("name")String name);

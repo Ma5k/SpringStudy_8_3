@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity	//1¡¢@entity×¢½âÖ¸Ã÷ÕâÊÇÒ»¸öºÍÊı¾İ¿â±íÓ³ÉäµÄÊµÌåÀà
+@Entity	//1ã€@entityæ³¨è§£æŒ‡æ˜è¿™æ˜¯ä¸€ä¸ªå’Œæ•°æ®åº“è¡¨æ˜ å°„çš„å®ä½“ç±»
 public class Person {
-	@Id	//2¡¢@Id×¢½âÖ¸Ã÷Õâ¸öÊôĞÔÓ³ÉäÎªÊı¾İ¿âµÄÖ÷¼ü
-	@GeneratedValue	//3¡¢@GeneratedValue×¢½âÄ¬ÈÏÊ¹ÓÃÖ÷¼üÉú³É·½Ê½Îª×ÔÔö£¬hibernate»áÎªÎÒÃÇ×Ô¶¯Éú³ÉÒ»¸öÃûÎªHIBERNATE_SEQUENCEµÄĞòÁĞ¡£
+	@Id	//2ã€@Idæ³¨è§£æŒ‡æ˜è¿™ä¸ªå±æ€§æ˜ å°„ä¸ºæ•°æ®åº“çš„ä¸»é”®
+	@GeneratedValue	//3ã€@GeneratedValueæ³¨è§£é»˜è®¤ä½¿ç”¨ä¸»é”®ç”Ÿæˆæ–¹å¼ä¸ºè‡ªå¢ï¼Œhibernateä¼šä¸ºæˆ‘ä»¬è‡ªåŠ¨ç”Ÿæˆä¸€ä¸ªåä¸ºHIBERNATE_SEQUENCEçš„åºåˆ—ã€‚
 	private Long id;
 	private String name;
 	private Integer age;
