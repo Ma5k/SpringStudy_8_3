@@ -7,10 +7,10 @@
 </head>
 <body>
 	<p>hahaha</p>
-	<button>查询</button>
-	<button>新增</button>
-	<button>修改</button>
-	<button>删除</button>
+	<button id="Retrieve">查询</button>
+	<button id="Create">新增</button>
+	<button id="Update">修改</button>
+	<button id="Delete">删除</button>
 	<div id="people">
 	</div>
 	<script src="jquery.min.js"></script>
@@ -27,6 +27,59 @@
 			}
 		});
 	});
+	
+	$("#Retrieve").click(function(){
+		$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"http://localhost:8080/api/people",
+			success:function(data) {
+				str = JSON.stringify(data);
+				$("#people").text(str);
+			}
+		});
+	});
+	
+	$("#Create").click(function(){
+		$.ajax({
+			type:"POST",
+			contentType:"application/json;charset=utf-8",
+			dataType:"json",
+			data:JSON.stringify({name:"xixi",address:"郑州",age:"21"}),
+			url:"http://localhost:8080/api/people",
+			success:function(data) {
+				str = JSON.stringify(data);
+				$("#people").text(str);
+			}
+		});
+	});
+	
+	$("#Update").click(function(){
+		$.ajax({
+			type:"PUT",
+			contentType:"application/json;charset=utf-8",
+			dataType:"json",
+			data:JSON.stringify({name:"xixi",address:"郑州",age:"21"}),
+			url:"http://localhost:8080/api/people/1",
+			success:function(data) {
+				str = JSON.stringify(data);
+				$("#people").text(str);
+			}
+		});
+	});
+	
+	$("#Delete").click(function(){
+		$.ajax({
+			type:"DELETE",
+			dataType:"json",
+			url:"http://localhost:8080/api/people/3",
+			success:function(data) {
+				str = JSON.stringify(data);
+				$("#people").text(str);
+			}
+		});
+	});
+	
 	</script>
 </body>
 </html>
